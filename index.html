@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101b2c"><meta name="description" content="101 Okey elini hesapla, açılışını kontrol et.">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css">
+<title>101 Asistanı</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><a class="brand" href="#"><span class="brand-mark">101</span><span><b>Okey Asistanı</b><small>Hesap sende değil, bizde.</small></span></a><button id="themeBtn" class="icon-btn" aria-label="Temayı değiştir">☼</button></header>
+<main>
+<section class="hero"><div class="eyebrow"><span class="pulse"></span> MASA BAŞI YARDIMCIN</div><h1>Elini gör.<br><em>Kaçla açtığını</em> bil.</h1><p>Istakanın fotoğrafını ekle, taşlarını kontrol et ve geçerli perlerle açılış hesabını gör.</p><div class="hero-chips"><span>✦ 101 açılış hesabı</span><span>✓ Taş kontrolü</span><span>↗ Mobil uyumlu</span></div></section>
+<section class="panel" id="uploadPanel">
+<div class="section-head"><div><span class="step">01</span><h2>Istakanı ekle</h2></div><span class="muted">Fotoğraf veya manuel giriş</span></div>
+<label class="dropzone" id="dropzone" for="photoInput"><input id="photoInput" type="file" accept="image/*" capture="environment"><span class="camera">⌁</span><b>Fotoğraf çek veya galeriden seç</b><small>Taşlar net görünsün, mümkünse tam karşıdan çek.</small><span class="choose-btn">Fotoğraf seç</span></label>
+<div id="previewWrap" class="preview-wrap hidden"><img id="preview" alt="Istaka fotoğrafı önizlemesi"><div class="preview-actions"><span id="fileName">Fotoğraf yüklendi</span><button id="removePhoto" class="text-btn">Fotoğrafı kaldır</button></div><div class="notice">Fotoğraf şu an taşları otomatik ve güvenilir biçimde okuyamıyor. Aşağıda taşlarını seçerek sonucu kesinleştirebilirsin.</div></div>
+</section>
+<section class="panel">
+<div class="section-head"><div><span class="step">02</span><h2>Taşlarını seç</h2></div><span class="muted" id="tileCount">0 taş</span></div>
+<p class="helper">Fotoğraftaki taşları aşağıdaki renk ve sayılara dokunarak ekle. Yanlış eklenen taşı elinden kaldırabilirsin.</p>
+<div class="tile-picker" id="tilePicker"></div>
+<div class="selected-head"><b>Elindeki taşlar</b><button id="clearTiles" class="text-btn">Temizle</button></div>
+<div id="selectedTiles" class="selected-tiles"><div class="empty">Henüz taş eklemedin. Yukarıdan taş seçerek başlayalım.</div></div>
+<div class="joker-row"><label for="jokerCount">Sahte okey / joker sayısı</label><select id="jokerCount"><option value="0">Yok</option><option value="1">1 taş</option><option value="2">2 taş</option></select></div>
+</section>
+<section class="panel result-panel">
+<div class="section-head"><div><span class="step">03</span><h2>Açılış sonucunu gör</h2></div></div>
+<div id="result" class="result-empty"><div class="result-icon">✦</div><b>Hesaplamaya hazırız</b><p>Taşlarını eklediğinde geçerli perleri bulup açılış toplamını hesaplayacağız.</p></div>
+<button id="calculateBtn" class="primary-btn" disabled>Elimi hesapla <span>→</span></button>
+<div class="fineprint">Bilgi amaçlı yardımcıdır. Oyundaki gösterge, okey ve masa kuralını kontrol etmeyi unutma.</div>
+</section>
+<footer>101 OKEY ASİSTANI <span>•</span> Sade, hızlı, yanında.</footer>
+</main>
+</div>
+<script src="app.js"></script>
+</body></html>
